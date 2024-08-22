@@ -1,0 +1,57 @@
+.repair-technique {
+  background-color: $bg-color;
+  padding-top: 16px;
+  border-bottom: 1px solid $border-bottom;
+  min-height: 228px;
+
+  &__slides-wrapper {
+    display: flex;
+  }
+
+  &__slide {
+    display: flex;
+    justify-content: center;
+    flex-shrink: 1;
+    &:not(:last-child) {
+      margin-right: 16px;
+    }
+  }
+
+  &__pagination {
+    position: relative;
+    margin-top: 16px;
+  }
+
+  &__btn-show-all {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .repair-technique {
+    padding-top: 24px;
+
+    &__btn-show-all {
+      display: block;
+      padding-top: 24px;
+    }
+    &__slides-wrapper {
+      display: flex;
+      column-gap: 24px;
+    }
+    &__slide {
+      &:not(:last-child) {
+        margin: 0;
+      }
+    }
+  }
+}
+
+@media (min-width: 1120px) {
+  .repair-technique {
+    &__slides-wrapper {
+      display: flex;
+      column-gap: 32px;
+    }
+  }
+}

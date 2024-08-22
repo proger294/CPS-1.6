@@ -1,0 +1,494 @@
+@charset "UTF-8";
+/**
+  Нормализация блочной модели
+ */
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+/**
+  Убираем внутренние отступы слева тегам списков,
+  у которых есть атрибут class
+ */
+:where(ul, ol):where([class]) {
+  padding-left: 0;
+}
+
+/**
+  Убираем внешние отступы body и двум другим тегам,
+  у которых есть атрибут class
+ */
+body,
+:where(blockquote, figure):where([class]) {
+  margin: 0;
+}
+
+/**
+  Убираем внешние отступы вертикали нужным тегам,
+  у которых есть атрибут class
+ */
+:where(h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+dl):where([class]) {
+  margin-block: 0;
+}
+
+:where(dd[class]) {
+  margin-left: 0;
+}
+
+:where(fieldset[class]) {
+  margin-left: 0;
+  padding: 0;
+  border: none;
+}
+
+/**
+  Убираем стандартный маркер маркированному списку,
+  у которого есть атрибут class
+ */
+:where(ul[class]) {
+  list-style: none;
+}
+
+:where(address[class]) {
+  font-style: normal;
+}
+
+/**
+  Обнуляем вертикальные внешние отступы параграфа,
+  объявляем локальную переменную для внешнего отступа вниз,
+  чтобы избежать взаимодействие с более сложным селектором
+ */
+p {
+  --paragraphMarginBottom: 24px;
+  margin-block: 0;
+}
+
+/**
+  Внешний отступ вниз для параграфа без атрибута class,
+  который расположен не последним среди своих соседних элементов
+ */
+p:where(:not([class]):not(:last-child)) {
+  margin-bottom: var(--paragraphMarginBottom);
+}
+
+/**
+  Упрощаем работу с изображениями
+ */
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/**
+  Наследуем свойства шрифт для полей ввода
+ */
+input,
+textarea,
+select,
+button {
+  font: inherit;
+}
+
+html {
+  /**
+    Пригодится в большинстве ситуаций
+    (когда, например, нужно будет "прижать" футер к низу сайта)
+   */
+  height: 100%;
+}
+
+/**
+  Плавный скролл
+ */
+html,
+:has(:target) {
+  scroll-behavior: smooth;
+}
+
+body {
+  /**
+    Пригодится в большинстве ситуаций
+    (когда, например, нужно будет "прижать" футер к низу сайта)
+   */
+  min-height: 100%;
+  /**
+    Унифицированный интерлиньяж
+   */
+  line-height: 1.5;
+}
+
+/**
+  Приводим к единому цвету svg-элементы
+ */
+svg *[fill] {
+  fill: currentColor;
+}
+
+svg *[stroke] {
+  stroke: currentColor;
+}
+
+/**
+  Чиним баг задержки смены цвета при взаимодействии с svg-элементами
+ */
+svg * {
+  transition-property: fill, stroke;
+}
+
+/**
+  Удаляем все анимации и переходы для людей,
+  которые предпочитают их не использовать
+ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+@font-face {
+  font-family: "TT Lakes Regular";
+  font-weight: 400;
+  font-style: normal;
+  src: url(../fonts/TTLakes-Regular.woff2) format(woff2), url(../fonts/TTLakes-Regular.woff) format(woff);
+}
+@font-face {
+  font-family: "TT Lakes Medium";
+  font-weight: 500;
+  font-style: normal;
+  src: url(../fonts/TTLakes-Medium.woff2) format(woff2), url(../fonts/TTLakes-Medium.woff) format(woff);
+}
+@font-face {
+  font-family: "TT Lakes Bold";
+  font-weight: 700;
+  font-style: normal;
+  src: url(../fonts/TTLakes-Bold.woff2) format(woff2), url(../fonts/TTLakes-Bold.woff) format(woff);
+}
+@font-face {
+  font-family: "TT Lakes Condensed Medium";
+  font-weight: 500;
+  font-style: normal;
+  src: url(../fonts/TTLakesCondensed-Medium.woff2) format(woff2), url(../fonts/TTLakesCondensed-Medium.woff) format(woff);
+}
+.container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 0 24px;
+  }
+}
+@media (min-width: 1120px) {
+  .container {
+    padding: 0 32px;
+  }
+}
+.brands {
+  background-color: #F8F8F8;
+  border-bottom: 1px solid #D9FFF5;
+  min-height: 154px;
+}
+.brands__btn-show-all {
+  display: none;
+}
+.brands__slides-wrapper {
+  padding-top: 16px;
+  display: flex;
+}
+.brands__slide {
+  display: flex;
+  justify-content: center;
+  flex-shrink: 1;
+}
+.brands__slide:not(:last-child) {
+  margin-right: 16px;
+}
+.brands__pagination {
+  position: relative;
+  margin-top: 19px;
+}
+
+.swiper-pagination-bullet {
+  background-color: #B5B6BC;
+  width: 12px;
+  height: 12px;
+}
+
+.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
+.swiper-pagination-horizontal .swiper-pagination-bullets .swiper-pagination-bullet {
+  margin: 0 6px;
+}
+
+@media (min-width: 768px) {
+  .brands__btn-show-all {
+    display: block;
+    margin-top: 24px;
+  }
+  .brands__slides-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    -moz-column-gap: 24px;
+         column-gap: 24px;
+    row-gap: 16px;
+    padding-top: 24px;
+  }
+  .brands__slide {
+    width: auto;
+    height: auto;
+  }
+  .brands__slide:not(:last-child) {
+    margin: 0;
+  }
+  .brands__slide:not(:nth-child(-n+6)) {
+    display: none;
+  }
+}
+@media (min-width: 1119px) {
+  .brands__slide:nth-child(n) {
+    display: block;
+  }
+}
+@media (min-width: 1120px) {
+  .brands__slides-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    -moz-column-gap: 32px;
+         column-gap: 32px;
+    row-gap: 16px;
+  }
+  .brands__slide:not(:nth-child(-n+8)) {
+    display: none;
+  }
+}
+.brands-slide--visible:nth-child(n) {
+  display: block;
+}
+
+.sub-title {
+  font-family: "TT Lakes Regular";
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: #7E7E82;
+  background-color: #FFFFFF;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.brand-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 240px;
+  height: 72px;
+  border: 1.5px solid #eaeaea;
+  border-radius: 6px;
+  padding: 0 16px;
+  background-color: #FFFFFF;
+}
+
+@media (min-width: 768px) {
+  .brand-card {
+    width: 224px;
+  }
+}
+@media (min-width: 1120px) {
+  .brand-card {
+    width: 240px;
+  }
+}
+.repair-btn {
+  width: 40px;
+  height: 40px;
+  border: 2px solid #FF3E79;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.repair-btn img {
+  transition: 0.3s;
+}
+@media (hover: hover) {
+  .repair-btn:hover img {
+    transition: 0.3s;
+    transform: scale(1.4);
+  }
+}
+@media (hover: none) {
+  .repair-btn:active img {
+    transition: 0.3s;
+    transform: scale(1.4);
+  }
+}
+
+.btn-show-all {
+  border: none;
+  background-color: transparent;
+  font-size: 16px;
+  font-family: "TT Lakes Medium";
+  padding: 0px 25px;
+  padding-bottom: 34px;
+  position: relative;
+  cursor: pointer;
+}
+.btn-show-all::before {
+  content: url(../img/double-strelka.svg);
+  position: absolute;
+  left: 5px;
+}
+.btn-show-all--active::before {
+  transform: scaleY(-1);
+}
+
+.repair-technique {
+  background-color: #F8F8F8;
+  padding-top: 16px;
+  border-bottom: 1px solid #D9FFF5;
+  min-height: 228px;
+}
+.repair-technique__slides-wrapper {
+  display: flex;
+}
+.repair-technique__slide {
+  display: flex;
+  justify-content: center;
+  flex-shrink: 1;
+}
+.repair-technique__slide:not(:last-child) {
+  margin-right: 16px;
+}
+.repair-technique__pagination {
+  position: relative;
+  margin-top: 16px;
+}
+.repair-technique__btn-show-all {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .repair-technique {
+    padding-top: 24px;
+  }
+  .repair-technique__btn-show-all {
+    display: block;
+    padding-top: 24px;
+  }
+  .repair-technique__slides-wrapper {
+    display: flex;
+    -moz-column-gap: 24px;
+         column-gap: 24px;
+  }
+  .repair-technique__slide:not(:last-child) {
+    margin: 0;
+  }
+}
+@media (min-width: 1120px) {
+  .repair-technique__slides-wrapper {
+    display: flex;
+    -moz-column-gap: 32px;
+         column-gap: 32px;
+  }
+}
+.btn-order {
+  background-color: #FF3E79;
+  width: 119px;
+  height: 32px;
+  border: none;
+  border-radius: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 16px 4px 12px;
+  font-family: "TT Lakes Bold";
+  font-weight: 700;
+  font-style: normal;
+  font-size: 12px;
+  color: white;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.btn-order img {
+  transition: 0.5s;
+}
+@media (hover: hover) {
+  .btn-order:hover {
+    background-color: #41F6D7;
+    color: #1B1C21;
+  }
+  .btn-order:hover img {
+    transition: 0.5s;
+    transform: scale(1.4);
+    filter: invert(1);
+  }
+}
+@media (hover: none) {
+  .btn-order:active {
+    background-color: #41F6D7;
+    color: #1B1C21;
+  }
+  .btn-order:active img {
+    transition: 0.5s;
+    transform: scale(1.4);
+    filter: invert(1);
+  }
+}
+
+.technique-card {
+  background-color: #FFFFFF;
+  width: 240px;
+  height: 160px;
+  border-radius: 6px;
+  border: 1px solid #eaeaea;
+  font-family: "TT Lakes Medium";
+  font-weight: 500;
+  font-style: normal;
+  font-size: 16px;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+}
+.technique-card__text {
+  line-height: 150%;
+  letter-spacing: -0.01em;
+}
+.technique-card__btn {
+  align-self: flex-end;
+}
+
+@media (min-width: 768px) {
+  .technique-card {
+    width: 224px;
+  }
+}
+@media (min-width: 1120px) {
+  .technique-card {
+    width: 240px;
+  }
+}/*# sourceMappingURL=main.css.map */
