@@ -460,6 +460,186 @@ a {
   }
 }
 
+.price-card {
+  width: 260px;
+  height: 200px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+.price-card__sub-title {
+  font-family: "TT Lakes Medium";
+  font-size: 14px;
+  color: #7E7E82;
+}
+.price-card__text {
+  font-family: "TT Lakes Regular";
+  font-size: 14px;
+  color: #1B1C21;
+}
+.price-card__btn {
+  display: flex;
+  align-self: flex-end;
+  position: absolute;
+  bottom: 21px;
+  left: 125px;
+}
+.price-card__wrap-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 116px;
+}
+
+.date-first {
+  padding-right: 58px;
+}
+
+@media (min-width: 768px) {
+  .price-card {
+    width: 720px;
+    height: auto;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 0px;
+  }
+  .price-card__sub-title {
+    display: none;
+  }
+  .price-card__btn {
+    position: static;
+  }
+  .price-card__wrap-left {
+    height: auto;
+    width: 331px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+@media (min-width: 1120px) {
+  .price-card {
+    width: 1056px;
+    padding: 16px 24px;
+  }
+  .price-card:not(:last-child)::before {
+    width: 1008px;
+  }
+  .price-card__wrap-left {
+    width: 535px;
+  }
+}
+.prices-services {
+  background-color: #F8F8F8;
+  border-bottom: #D9FFF5;
+}
+.prices-services__cards-header {
+  display: none;
+  font-family: "TT Lakes Medium";
+  font-size: 14px;
+  color: #7E7E82;
+}
+.prices-services__slides-wrapper {
+  padding-top: 16px;
+  position: relative;
+}
+.prices-services__slide {
+  display: flex;
+  justify-content: center;
+  flex-shrink: 1;
+  border-radius: 6px;
+  background-color: #FFFFFF;
+}
+.prices-services__slide:not(:last-child) {
+  margin-right: 16px;
+}
+.prices-services__pagination {
+  position: relative;
+  margin-top: 16px;
+}
+.prices-services__info {
+  font-family: "TT Lakes Regular";
+  font-size: 14px;
+  max-width: 421px;
+}
+.prices-services__btn {
+  font-family: "TT Lakes Medium";
+  font-weight: bold;
+  font-size: 16px;
+  position: relative;
+  color: #1B1C21;
+  margin-top: 20px;
+  padding-bottom: 20px;
+  cursor: pointer;
+}
+.prices-services__btn::after {
+  content: url(../img/strelka-pink.svg);
+  position: absolute;
+  margin-left: 7px;
+  margin-top: 2px;
+}
+
+@media (min-width: 768px) {
+  .prices-services__info {
+    margin-top: 24px;
+  }
+  .prices-services__slide {
+    position: relative;
+    height: auto;
+    border-radius: 0px;
+  }
+  .prices-services__slide:not(:last-child)::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    padding: 0 16px;
+    width: 688px;
+    background-color: #eaeaea;
+    height: 1px;
+    z-index: 100;
+  }
+  .prices-services__slides-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  .prices-services__cards-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    padding-left: 16px;
+    width: 506px;
+    height: 53px;
+  }
+  .prices-services__wrap-left {
+    display: flex;
+    justify-content: space-between;
+    width: 135px;
+    padding-right: 10px;
+  }
+}
+@media (min-width: 1120px) {
+  .prices-services__slide:not(:last-child)::before {
+    width: 1008px;
+  }
+  .prices-services__cards-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    padding-left: 16px;
+    width: 757px;
+    height: 53px;
+  }
+  .prices-services__wrap-left {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 10px;
+    width: 262px;
+    padding-right: 35px;
+  }
+}
 .technique-card {
   background-color: #FFFFFF;
   width: 240px;
