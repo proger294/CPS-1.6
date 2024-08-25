@@ -534,7 +534,7 @@ a {
 }
 .prices-services {
   background-color: #F8F8F8;
-  border-bottom: #D9FFF5;
+  border-bottom: 1px solid #D9FFF5;
 }
 .prices-services__cards-header {
   display: none;
@@ -572,7 +572,7 @@ a {
   position: relative;
   color: #1B1C21;
   margin-top: 20px;
-  padding-bottom: 20px;
+  padding-bottom: 45px;
   cursor: pointer;
 }
 .prices-services__btn::after {
@@ -670,5 +670,64 @@ a {
 @media (min-width: 1120px) {
   .technique-card {
     width: 240px;
+  }
+}
+.footer {
+  background-color: #F8F8F8;
+  font-family: "TT Lakes Medium";
+  font-size: 14px;
+  color: #7E7E82;
+  padding-bottom: 19px;
+}
+.footer__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.footer__developers {
+  display: block;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  line-height: 114%;
+  text-indent: 65px;
+}
+.footer__privacy-policy {
+  display: block;
+  margin-bottom: 16px;
+}
+.footer__public-offer {
+  display: block;
+  text-indent: 13px;
+}
+
+@media (min-width: 768px) {
+  .footer {
+    padding-bottom: 0px;
+  }
+  .footer__inner {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: start;
+    padding-top: 32px;
+    padding-bottom: 25px;
+  }
+  .footer__developers {
+    white-space: wrap;
+    margin: 0;
+    text-indent: 0px;
+  }
+  .footer__public-offer {
+    white-space: wrap;
+    width: 213px;
+    text-indent: 0px;
+  }
+}
+@media (min-width: 1120px) {
+  .footer__inner {
+    padding-bottom: 21px;
+  }
+  .footer__public-offer {
+    width: 330px;
   }
 }/*# sourceMappingURL=main.css.map */
