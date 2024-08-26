@@ -1,0 +1,148 @@
+.burger-menu {
+  width: 320px;
+  min-height: 100vh;
+  font-family: "TT Lakes Medium";
+  font-size: 16px;
+  line-height: 24px;
+  background-color: $bg-color-white;
+  padding: 30px 29px 32px 22px;
+
+  &__burger-list {
+    margin-top: 46px;
+  }
+  &__contacts {
+    margin-top: 268px;
+  }
+}
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  &__btn-burger {
+    display: none;
+  }
+
+  &__btn-close {
+    display: flex;
+  }
+
+  &__btn-search {
+    display: flex;
+  }
+  &__logo {
+    margin-right: 60px;
+  }
+}
+
+.logo::before {
+  display: none;
+}
+.burger-list {
+  position: relative;
+  &__item:not(:last-child) {
+    margin-bottom: 32px;
+  }
+
+  &__item--active {
+    color: $text-gray;
+  }
+  &__item--active::after {
+    content: url(../img/psevdo-el-2.svg);
+    position: absolute;
+    left: 0;
+    margin-left: -22px;
+  }
+}
+.contacts {
+  &__mail {
+    display: block;
+    margin-top: 16px;
+  }
+
+  &__number {
+    display: block;
+    margin-top: 12px;
+    font-family: "TT Lakes Bold";
+    font-size: 24px;
+  }
+
+  &__languages {
+    margin-top: 40px;
+    display: flex;
+    gap: 7px;
+    &__item {
+      cursor: pointer;
+    }
+
+    &__item--active {
+      color: $text-gray;
+    }
+  }
+}
+.connection {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  &__btn-chat {
+    padding-top: 10px;
+  }
+}
+
+@media (min-width: 320px) {
+  .buttons {
+    &__connection {
+      display: none;
+    }
+  }
+  .navigation {
+    &__btn-burger {
+      display: flex;
+    }
+
+    &__btn-close {
+      display: none;
+    }
+
+    &__btn-search {
+      display: none;
+    }
+  }
+}
+@media (min-width: 768px) {
+  .buttons {
+    &__connection {
+      display: flex;
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  .navigation {
+    &__btn-burger {
+      display: none;
+    }
+
+    &__img {
+    }
+
+    &__btn-close {
+    }
+
+    &__logo {
+    }
+
+    &__btn-search {
+      display: flex;
+    }
+  }
+  .btn-circle {
+  }
+  .logo {
+    &__link {
+    }
+
+    &__img {
+    }
+  }
+}

@@ -1,0 +1,33 @@
+.body {
+  &__inner {
+
+  }
+  &__burger-menu {
+    display: none;
+  }
+  
+}
+
+@media (min-width: 768px) {
+  .body {
+    &__inner {
+
+    }
+    &__burger-menu {
+
+    }
+   
+  }
+}
+@media (min-width: 1440px) {
+  .body {
+    &__inner {
+display: flex;
+    }
+
+    &__burger-menu {
+        display: block;
+    }
+
+  }
+}
