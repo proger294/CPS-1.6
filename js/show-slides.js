@@ -5,7 +5,6 @@ const slides = document.querySelectorAll(".swiper-slide");
       showSlides(), changeButton();
     });
   
-
 function showSlides() {
   if (window.innerWidth >= 768) {
     for(let slide of slides){
@@ -15,11 +14,9 @@ function showSlides() {
 }
 
 function changeButton() {
-
-    btnShowAll.classList.toggle("btn-show-all--active");
-    btnShowAll.classList.contains("btn-show-all--active") ?
+    btnShowAll.classList.toggle("btn-show-all--pressed");
+    btnShowAll.classList.contains("btn-show-all--pressed") ?
     btnShowAll.innerHTML = "Закрыть":
-    btnShowAll.innerHTML = "Показать все";
-   
-  
+    btnShowAll.innerHTML = "Показать все"; 
 }
+

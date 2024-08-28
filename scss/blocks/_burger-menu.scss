@@ -5,13 +5,21 @@
   font-size: 16px;
   line-height: 24px;
   background-color: $bg-color-white;
-  padding: 30px 29px 32px 22px;
-
+  padding: 18px 16px 32px 16px;
+  transform: translateX(-100%);
+  transition: transform 0.5s;
+  position: absolute;
+  z-index: 300;
+  &--open {
+    display: block;
+    box-shadow: 10px 0px 100px 0px rgba(145, 144, 144, 0.5);
+    transform: translateX(0%);
+  }
   &__burger-list {
-    margin-top: 46px;
+    margin-top: 22px;
   }
   &__contacts {
-    margin-top: 268px;
+    margin-top: 32px;
   }
 }
 .navigation {
@@ -40,7 +48,7 @@
 .burger-list {
   position: relative;
   &__item:not(:last-child) {
-    margin-bottom: 32px;
+    margin-bottom: 24px;
   }
 
   &__item--active {
@@ -50,24 +58,24 @@
     content: url(../img/psevdo-el-2.svg);
     position: absolute;
     left: 0;
-    margin-left: -22px;
+    margin-left: -15px;
   }
 }
 .contacts {
   &__mail {
     display: block;
-    margin-top: 16px;
+    margin-top: 14px;
   }
 
   &__number {
     display: block;
-    margin-top: 12px;
+    margin-top: 14px;
     font-family: "TT Lakes Bold";
     font-size: 24px;
   }
 
   &__languages {
-    margin-top: 40px;
+    margin-top: 8px;
     display: flex;
     gap: 7px;
     &__item {
@@ -89,30 +97,81 @@
   }
 }
 
-@media (min-width: 320px) {
-  .buttons {
-    &__connection {
-      display: none;
-    }
-  }
-  .navigation {
-    &__btn-burger {
-      display: flex;
-    }
-
-    &__btn-close {
-      display: none;
-    }
-
-    &__btn-search {
-      display: none;
-    }
+.buttons {
+  &__connection {
+    display: none;
   }
 }
+.navigation {
+  &__btn-burger {
+    display: flex;
+  }
+
+  &__btn-close {
+    display: none;
+  }
+
+  &__btn-search {
+    display: none;
+  }
+}
+
+.burger-menu {
+  .navigation__btn-burger {
+    display: none;
+  }
+  .navigation__btn-close {
+    display: flex;
+  }
+  .navigation__btn-search {
+    display: flex;
+  }
+  .logo::before {
+    display: none;
+  }
+  .logo::after {
+    display: none;
+  }
+}
+
 @media (min-width: 768px) {
   .buttons {
     &__connection {
       display: flex;
+    }
+  }
+  .logo::before {
+    display: flex;
+  }
+
+  .burger-menu {
+    .navigation {
+      gap: 16px;
+    }
+  }
+
+  .burger-menu {
+    &__burger-list {
+      margin-top: 46px;
+    }
+  }
+  .burger-list {
+    position: relative;
+    &__item:not(:last-child) {
+      margin-bottom: 32px;
+    }
+
+    &__item--active {
+      color: $text-gray;
+    }
+  }
+  .contacts {
+    margin-top: 268px;
+    &__mail {
+      margin-top: 16px;
+    }
+    &__languages {
+      margin-top: 40px;
     }
   }
 }
@@ -122,27 +181,37 @@
     &__btn-burger {
       display: none;
     }
-
-    &__img {
-    }
-
-    &__btn-close {
-    }
-
-    &__logo {
-    }
-
     &__btn-search {
       display: flex;
     }
-  }
-  .btn-circle {
-  }
-  .logo {
-    &__link {
+    .logo::before {
+      display: none;
     }
-
-    &__img {
+  }
+  .burger-menu {
+    transform: translateX(0%);
+    position: static;
+    box-shadow: none;
+    .navigation__btn-close {
+      display: none;
     }
+  }
+  .burger-menu {
+    padding: 30px 31px 10px 22px;
+  }
+  .burger-menu__burger-list {
+    margin-top: 37px;
+  }
+  .burger-list__item:not(:last-child) {
+    margin-bottom: 28px;
+  }
+  .contacts {
+    margin-top: 240px;
+    &__languages {
+      margin-top: 43px;
+    }
+  }
+  .burger-list__item--active::after {
+    margin-left: -21px;
   }
 }

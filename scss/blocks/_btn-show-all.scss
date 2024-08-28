@@ -12,7 +12,8 @@
     position: absolute;
     left: 5px; 
   }
-  &--active::before {
+  &--pressed
+  ::before {
     transform: scaleY(-1);
   }
 }
