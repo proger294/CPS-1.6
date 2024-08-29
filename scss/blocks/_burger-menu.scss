@@ -192,6 +192,7 @@
     transform: translateX(0%);
     position: static;
     box-shadow: none;
+    z-index: 0;
     .navigation__btn-close {
       display: none;
     }
