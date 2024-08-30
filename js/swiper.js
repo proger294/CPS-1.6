@@ -1,5 +1,3 @@
-
-window.addEventListener("DOMContentLoaded", ()=>{
   const swiper = new Swiper(".swiper", {
     loop: false,
     freeMode: true,
@@ -16,7 +14,5 @@ window.addEventListener("DOMContentLoaded", ()=>{
     },
   });
   
-})
-
 
 

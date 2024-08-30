@@ -8,12 +8,13 @@
   &__slides-wrapper {
     padding-top: 16px;
     display: flex;
-
+    width: auto;
   }
   &__slide {
     display: flex;
     justify-content: center;
-    flex-shrink: 1;
+    width: 240px;
+
     &:not(:last-child) {
       margin-right: 16px;
     }
@@ -51,8 +52,8 @@
       padding-top: 24px;
     }
     &__slide {
-      width: auto;
-      height: auto;
+      width: 224px;
+
       &:not(:last-child) {
         margin: 0;
       }
@@ -76,6 +77,9 @@
       flex-wrap: wrap;
       column-gap: 32px;
       row-gap: 16px;
+    }
+    &__slide {
+      width: 240px;
     }
     &__slide:not(:nth-child(-n + 8)) {
       display: none;

@@ -6,12 +6,13 @@
 
   &__slides-wrapper {
     display: flex;
+    width: auto;
   }
 
   &__slide {
     display: flex;
     justify-content: center;
-    flex-shrink: 1;
+    width: 240px;
     &:not(:last-child) {
       margin-right: 16px;
     }
@@ -40,6 +41,9 @@
       column-gap: 24px;
     }
     &__slide {
+      width: 224px;
+    }
+    &__slide {
       &:not(:last-child) {
         margin: 0;
       }
@@ -49,6 +53,9 @@
 
 @media (min-width: 1120px) {
   .repair-technique {
+    &__slide {
+      width: 240px;
+    }
     &__slides-wrapper {
       display: flex;
       column-gap: 32px;

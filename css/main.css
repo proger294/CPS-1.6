@@ -987,11 +987,12 @@ a {
 .brands__slides-wrapper {
   padding-top: 16px;
   display: flex;
+  width: auto;
 }
 .brands__slide {
   display: flex;
   justify-content: center;
-  flex-shrink: 1;
+  width: 240px;
 }
 .brands__slide:not(:last-child) {
   margin-right: 16px;
@@ -1026,8 +1027,7 @@ a {
     padding-top: 24px;
   }
   .brands__slide {
-    width: auto;
-    height: auto;
+    width: 224px;
   }
   .brands__slide:not(:last-child) {
     margin: 0;
@@ -1048,6 +1048,9 @@ a {
     -moz-column-gap: 32px;
          column-gap: 32px;
     row-gap: 16px;
+  }
+  .brands__slide {
+    width: 240px;
   }
   .brands__slide:not(:nth-child(-n+8)) {
     display: none;
@@ -1150,11 +1153,12 @@ a {
 }
 .repair-technique__slides-wrapper {
   display: flex;
+  width: auto;
 }
 .repair-technique__slide {
   display: flex;
   justify-content: center;
-  flex-shrink: 1;
+  width: 240px;
 }
 .repair-technique__slide:not(:last-child) {
   margin-right: 16px;
@@ -1180,11 +1184,17 @@ a {
     -moz-column-gap: 24px;
          column-gap: 24px;
   }
+  .repair-technique__slide {
+    width: 224px;
+  }
   .repair-technique__slide:not(:last-child) {
     margin: 0;
   }
 }
 @media (min-width: 1120px) {
+  .repair-technique__slide {
+    width: 240px;
+  }
   .repair-technique__slides-wrapper {
     display: flex;
     -moz-column-gap: 32px;
@@ -1321,11 +1331,11 @@ a {
 .prices-services__slides-wrapper {
   padding-top: 16px;
   position: relative;
+  width: auto;
 }
 .prices-services__slide {
   display: flex;
   justify-content: center;
-  flex-shrink: 1;
   border-radius: 6px;
   background-color: #FFFFFF;
 }
