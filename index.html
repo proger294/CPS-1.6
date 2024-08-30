@@ -10,7 +10,6 @@
 </head>
 
 <body class="body">
-
   <div class="body__modal-state modal-state"></div>
   <div class="body__global-container">
     <div class="body__inner">
@@ -122,18 +121,23 @@
           <img class="navigation__img" src="./img/navigation-btn/close.svg" alt="close-button" />
         </button>
         <h5 class="modal-order-call__title">Заказать звонок</h5>
-        <form class="modal-order-call__form" action="">
+        <form class="modal-order-call__form" method="get" action="">
           <label class="modal-order-call__label" for="phone">
-            <input class="modal-order-call__input" id="phone" placeholder="Телефон" type="tel">
+            <input class="modal-order-call__input" id="phone" placeholder="Телефон" type="tel" required />
           </label>
+
+          <p class="modal-order-call__info">
+            Нажимая “отправить”, вы даете согласие на
+            <span>обработку персональных данных</span> и соглашаетесь с нашей
+            <span>политикой конфиденциальности</span>
+          </p>
+          <button class="modal-order-call__btn-bottom btn-order" type="submit">
+            Отправить
+            <img src="./img/strelka-white.svg" alt="button" />
+          </button>
         </form>
-        <p class="modal-order-call__info">Нажимая “отправить”, вы даете согласие на <span>обработку персональных данных</span> и
-          соглашаетесь с нашей <span>политикой конфиденциальности</span></p>
-        <button class="modal-order-call__btn-bottom btn-order" type="submit">
-          Отправить
-          <img src="./img/strelka-white.svg" alt="button" />
-        </button>
       </div>
+
       <div class="body__wrapper-main-content wrapper-main-content">
         <header class="header">
           <div class="container">

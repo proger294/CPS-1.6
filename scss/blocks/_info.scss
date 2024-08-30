@@ -21,6 +21,7 @@
     cursor: pointer;
     &::before {
       content: url(../img/double-strelka.svg);
+      transform: scale(1.2);
       position: absolute;
       left: 5px;
     }

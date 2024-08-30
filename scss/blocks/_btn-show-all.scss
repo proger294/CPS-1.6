@@ -10,9 +10,10 @@
   &::before {
     content: url(../img/double-strelka.svg);
     position: absolute;
-    left: 5px; 
+    left: 5px;
+    transform: scale(1.2);
   }
   &--pressed::before {
-    transform: scaleY(-1);
+    transform: scaleY(-1.2);
   }
 }

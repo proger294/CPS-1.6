@@ -165,6 +165,10 @@ a {
   color: inherit;
 }
 
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
 @font-face {
   font-family: "TT Lakes Regular";
   font-weight: 400;
@@ -552,7 +556,7 @@ a {
   }
 }
 .modal-feedback {
-  background-color: white;
+  background-color: #FFFFFF;
   width: 320px;
   height: 676px;
   padding: 24px 16px 0 16px;
@@ -921,6 +925,7 @@ a {
 }
 .info__btn-read-more::before {
   content: url(../img/double-strelka.svg);
+  transform: scale(1.2);
   position: absolute;
   left: 5px;
 }
@@ -1140,9 +1145,10 @@ a {
   content: url(../img/double-strelka.svg);
   position: absolute;
   left: 5px;
+  transform: scale(1.2);
 }
 .btn-show-all--pressed::before {
-  transform: scaleY(-1);
+  transform: scaleY(-1.2);
 }
 
 .repair-technique {
