@@ -1183,12 +1183,22 @@ a {
     display: flex;
     -moz-column-gap: 24px;
          column-gap: 24px;
+    row-gap: 16px;
+    flex-wrap: wrap;
   }
   .repair-technique__slide {
     width: 224px;
   }
   .repair-technique__slide:not(:last-child) {
     margin: 0;
+  }
+  .repair-technique__slide:not(:nth-child(-n+3)) {
+    display: none;
+  }
+}
+@media (min-width: 1119px) {
+  .repair-technique__slide:nth-child(n) {
+    display: block;
   }
 }
 @media (min-width: 1120px) {
@@ -1200,7 +1210,14 @@ a {
     -moz-column-gap: 32px;
          column-gap: 32px;
   }
+  .repair-technique__slide:not(:nth-child(-n+4)) {
+    display: none;
+  }
 }
+.repair-technique-slide--visible:nth-child(n) {
+  display: block;
+}
+
 .btn-order {
   background-color: #FF3E79;
   width: 119px;

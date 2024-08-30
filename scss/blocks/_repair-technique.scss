@@ -39,6 +39,8 @@
     &__slides-wrapper {
       display: flex;
       column-gap: 24px;
+      row-gap: 16px;
+      flex-wrap: wrap;
     }
     &__slide {
       width: 224px;
@@ -48,6 +50,14 @@
         margin: 0;
       }
     }
+    &__slide:not(:nth-child(-n + 3)) {
+      display: none;
+    }
+  }
+}
+@media (min-width: 1119px) {
+  .repair-technique__slide:nth-child(n) {
+    display: block;
   }
 }
 
@@ -60,5 +70,11 @@
       display: flex;
       column-gap: 32px;
     }
+    &__slide:not(:nth-child(-n + 4)) {
+      display: none;
+    }
   }
+}
+.repair-technique-slide--visible:nth-child(n) {
+  display: block;
 }

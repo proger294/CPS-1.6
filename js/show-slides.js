@@ -1,22 +1,38 @@
-const btnShowAll = document.querySelector(".btn-show-all");
-const slides = document.querySelectorAll(".swiper-slide");
+const btnShowAll = document.querySelectorAll(".btn-show-all");
+const slidesBrands = document.querySelectorAll(".brands__slide");
+const slidesTechniques = document.querySelectorAll(".repair-technique__slide");
 
-    btnShowAll.addEventListener("click", () => {
-      showSlides(), changeButton();
+for (let i = 0; i < btnShowAll.length; i++) {
+  if (i === 0) {
+    btnShowAll[i].addEventListener("click", () => {
+      showSlidesBrands();
+      btnShowAll[i].classList.toggle("btn-show-all--pressed");
+      btnShowAll[i].classList.contains("btn-show-all--pressed")
+        ? (btnShowAll[i].innerHTML = "Закрыть")
+        : (btnShowAll[i].innerHTML = "Показать все");
     });
-  
-function showSlides() {
+  }
+  if (i === 1) {
+    btnShowAll[i].addEventListener("click", () => {
+      showSlidesTechniques();
+      btnShowAll[i].classList.toggle("btn-show-all--pressed");
+      btnShowAll[i].classList.contains("btn-show-all--pressed")
+        ? (btnShowAll[i].innerHTML = "Закрыть")
+        : (btnShowAll[i].innerHTML = "Показать все");
+    });
+  }
+}
+
+function showSlidesBrands() {
   if (window.innerWidth >= 768) {
-    for(let slide of slides){
+    for (let slide of slidesBrands) {
       slide.classList.toggle("brands-slide--visible");
     }
   }
 }
 
-function changeButton() {
-    btnShowAll.classList.toggle("btn-show-all--pressed");
-    btnShowAll.classList.contains("btn-show-all--pressed") ?
-    btnShowAll.innerHTML = "Закрыть":
-    btnShowAll.innerHTML = "Показать все"; 
+function showSlidesTechniques() {
+  for (let slide of slidesTechniques) {
+    slide.classList.toggle("repair-technique-slide--visible");
+  }
 }
-
