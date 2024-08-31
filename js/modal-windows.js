@@ -38,3 +38,10 @@ for (let closeButton of closeButtons) {
     }
   });
 }
+
+  modalState.addEventListener("click", () => {
+  modalBurgerMenu.classList.remove("burger-menu--open");
+  modalFeedback.classList.remove("modal-feedback--open");
+  modalOrderCall.classList.remove("modal-order-call--open");
+  modalState.classList.remove("body__modal-state--visible");
+});
