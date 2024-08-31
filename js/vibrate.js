@@ -4,12 +4,18 @@ const buttons = document.querySelectorAll(
   ".btn-order"
 );
 
-for (let button of buttons) {
-  button.addEventListener("click", () => {
-    vibrate();
+// for (let button of buttons) {
+//   button.addEventListener("click", () => {
+//     vibrate();
+//   });
+// }
+
+buttons.forEach(button => {
+    button.addEventListener('click', () => {
+      vibrate()
+    });
   });
-}
 
 function vibrate() {
-  navigator.vibrate(50);
+  navigator.vibrate(10);
 }
