@@ -11,5 +11,5 @@ for (let button of buttons) {
 }
 
 function vibrate() {
-  navigator.vibrate(100);
+  navigator.vibrate(50);
 }
