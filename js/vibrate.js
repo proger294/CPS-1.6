@@ -1,21 +1,7 @@
-const buttons = document.querySelectorAll(
-  ".btn-circle",
-  ".repair-btn",
-  ".btn-order"
-);
-
-// for (let button of buttons) {
-//   button.addEventListener("click", () => {
-//     vibrate();
-//   });
-// }
+const buttons = document.querySelectorAll(".btn-circle, .repair-btn, .btn-order");
 
 buttons.forEach(button => {
     button.addEventListener('click', () => {
-      vibrate()
+        navigator.vibrate(10);
     });
   });
-
-function vibrate() {
-  navigator.vibrate(10);
-}
